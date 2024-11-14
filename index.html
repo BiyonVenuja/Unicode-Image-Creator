@@ -1,0 +1,162 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCICODE CHARACTER IMAGE CREATOR </title>
+
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            gap: 30px;
+            background-color: black;
+            padding: 10px 30px;
+        }
+
+        td {
+            width: 40px;
+            text-align: center;
+        }
+
+        .container {
+            position: absolute;
+            /* scale: 0.8; */
+            transform: scale(0.2);
+            transform-origin: 0 0;
+            display: grid;
+            width: 3000px;
+            /* Total width of the grid */
+            height: 3000px;
+            /* Total height of the grid */
+            grid-template-columns: repeat(300, 10px);
+            /* 300 columns, each 1px wide */
+            grid-template-rows: repeat(300, 10px);
+            /* 400 rows, each 1px tall */
+        }
+
+        .items {
+            width: 20px;
+            height: 20px;
+            /* color: white; */
+            font-size: 15px;
+            /* background-color: blue; */
+        }
+
+        .items:nth-of-type(2n) {
+            /* background-color: red; */
+        }
+
+        .main {
+            display: flex;
+
+            height: 600px;
+        }
+
+        .unicode {
+            /* background-color: white; */
+            overflow: hidden;
+            /* flex: 50%; */
+            max-width: 600px;
+            max-height: 600px;
+            width: 600px;
+            aspect-ratio: 1;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+
+
+        .cnvs {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex: 50%; */
+            max-width: 600px;
+            max-height: 600px;
+            width: 600px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #222;
+            /* Dark text for contrast on light background */
+            background-color: #f1f1f1;
+            /* Light background for contrast on black */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            /* Subtle shadow for depth */
+        }
+
+        .button:hover {
+            background-color: #e0e0e0;
+            /* Slightly darker shade on hover */
+        }
+
+        .button:active {
+            transform: scale(0.98);
+            /* Slightly shrink on click */
+        }
+
+        .button:focus {
+            outline: 2px solid #e0e0e0;
+            /* Focus outline */
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="color: white; text-align: center; font-family: monospace;">
+        <h1 style="color: white;">UNCICODE CHARACTER IMAGE CREATOR</h1>
+        <h3>Characters used : ["@", "#", "%", "&", "8", "O", "X", "o", "=", "+", "*", "~", "-", ":", ",", "^", "\"",
+            "'", ".", " "]</h3>
+        <p>Use images with an aspect ratio of 1:1</p>
+        <h4 style="font-style: italic; color: #e0e0e0;">BY BIYON VENUJA</h4>
+    </div>
+    <img id="imgEle" src="" alt="" style="display: none;">
+    <!-- <table border="1">
+        <tr>
+            <td style="">X</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td id="x"></td>
+            <td id="y"></td>
+        </tr>
+    </table> -->
+    <button id="btn" class="button">ADD IMAGE</button>
+
+    <div class="main" style="display: none;">
+        <div class="unicode">
+            <img src="loading-gif.gif" alt="" height="30" class="loading">
+            <div class="container">
+            </div>
+        </div>
+
+        <div class="cnvs">
+            <img src="loading-gif.gif" alt="" height="30" class="loading">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
